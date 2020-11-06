@@ -1,12 +1,17 @@
 import './App.css';
+import { Container } from 'semantic-ui-react';
 
-import {AuthComponent} from './containers/AuthComponent';
+import { AuthComponent } from './containers/AuthComponent';
+import MenuComponent from './components/Menu/MenuComponent'
 
 function App() {
   return (
-    <div className="App">
-      <AuthComponent />
-    </div>
+    <>
+      <MenuComponent />
+      <Container>
+        <AuthComponent />
+      </Container>
+    </>
   );
 }
 

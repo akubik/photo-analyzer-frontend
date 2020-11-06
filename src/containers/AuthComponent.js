@@ -1,6 +1,8 @@
 import React from 'react';
 
-import LoginFormComponent from '../components/LoginFormComponent';
+import { Grid } from 'semantic-ui-react'
+
+import LoginFormComponent from '../components/LoginForm/LoginFormComponent';
 
 export class AuthComponent extends React.Component {
 
@@ -15,6 +17,13 @@ export class AuthComponent extends React.Component {
     }
 
     render() {
-        return <LoginFormComponent onFormSubmitted={this.onSubmit}/>
+        return (
+            <Grid centered>
+                <Grid.Column width={6}>
+                    <LoginFormComponent onFormSubmitted={this.onSubmit} />
+                </Grid.Column>
+            </Grid>
+
+        )
     }
 }
