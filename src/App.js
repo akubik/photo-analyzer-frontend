@@ -1,7 +1,7 @@
 import './App.css';
 import { Container } from 'semantic-ui-react';
 
-import { AuthComponent } from './containers/AuthComponent';
+import { LoginComponent } from './containers/Auth/Login/Login';
 import MenuComponent from './components/Menu/MenuComponent'
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <>
       <MenuComponent />
       <Container>
-        <AuthComponent />
+        <LoginComponent />
       </Container>
     </>
   );
