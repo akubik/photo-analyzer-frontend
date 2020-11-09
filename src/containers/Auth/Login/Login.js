@@ -1,10 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import { Grid } from 'semantic-ui-react'
 
 import { LoginFormComponent } from '../../../components/LoginForm/LoginFormComponent';
 
-export class LoginComponent extends React.Component {
+class LoginComponent extends React.Component {
 
     constructor() {
         super();
@@ -13,7 +14,7 @@ export class LoginComponent extends React.Component {
 
     onSubmit(event) {
         event.preventDefault();
-        console.log(event);
+        this.props.onLogin();
     }
 
     render() {
@@ -27,3 +28,11 @@ export class LoginComponent extends React.Component {
         )
     }
 }
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onLogin: () => dispatch({ type: 'LOGIN' })
+    }
+}
+
+export default connect(null, mapDispatchToProps)(LoginComponent);

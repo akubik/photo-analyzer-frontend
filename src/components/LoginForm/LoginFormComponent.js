@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
 
-import { Form, Button, Input,  } from "semantic-ui-react";
+import { Form, Button, Input, } from "semantic-ui-react";
 
 export const LoginFormComponent = (props) => (
   <div>
@@ -18,7 +18,6 @@ export const LoginFormComponent = (props) => (
     </Form>
   </div>
 );
-
 
 LoginFormComponent.propTypes = {
   onFormSubmitted: PropTypes.func
