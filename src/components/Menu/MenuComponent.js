@@ -13,7 +13,7 @@ const featureLinksRenderer = isLoggedIn => (
     </React.Fragment> : null
 );
 
-const authLinksRenderer = isLoggedIn => (
+const authLinksRenderer = (isLoggedIn, loginFn) => (
     !isLoggedIn ? <React.Fragment>
         <Menu.Item name='Login'
             onClick={() => console.log('Login')}></Menu.Item>
@@ -22,9 +22,9 @@ const authLinksRenderer = isLoggedIn => (
     </React.Fragment> : null
 )
 
-const logoutLinkRenderer = isLoggedIn => (
+const logoutLinkRenderer = (isLoggedIn, logoutFn) => (
     isLoggedIn ? <Menu.Item name='Logout'
-        onClick={() => console.log('Logout')}></Menu.Item> : null
+        onClick={logoutFn}></Menu.Item> : null
 )
 
 const MenuComponent = (props) => (
@@ -33,7 +33,7 @@ const MenuComponent = (props) => (
             {featureLinksRenderer(props.isLoggedIn)}
             <Menu.Menu position="right">
                 {authLinksRenderer(props.isLoggedIn)}
-                {logoutLinkRenderer(props.isLoggedIn)}
+                {logoutLinkRenderer(props.isLoggedIn, props.onLogout)}
             </Menu.Menu>
         </Menu>
     </Segment>
@@ -49,4 +49,10 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(MenuComponent);
+const mapDispatchToProps = dispatch => {
+    return {
+        onLogout: () => dispatch({type: 'LOGOUT'})
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MenuComponent);

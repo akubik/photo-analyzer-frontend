@@ -1,9 +1,22 @@
 const initialState = {
-    isLoggedIn: true
+    isLoggedIn: false
 }
 
 const reducer = (state = initialState, action) => {
-    return state;
+    switch (action.type) {
+        case 'LOGIN':
+            return {
+                ...state,
+                isLoggedIn: true
+            }
+        case 'LOGOUT': 
+            return {
+                ...state,
+                isLoggedIn: false
+            }
+        default:
+            return state;
+    }
 }
 
 export default reducer;
