@@ -1,6 +1,9 @@
 import React from "react";
+import PropTypes from 'prop-types';
+
 import { Form, Button, Input,  } from "semantic-ui-react";
-const authFormComponent = (props) => (
+
+export const LoginFormComponent = (props) => (
   <div>
     <Form onSubmit={props.onFormSubmitted}>
       <Form.Field>
@@ -16,4 +19,8 @@ const authFormComponent = (props) => (
   </div>
 );
 
-export default authFormComponent;
+
+LoginFormComponent.propTypes = {
+  onFormSubmitted: PropTypes.func
+}
+
