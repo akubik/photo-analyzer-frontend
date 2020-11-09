@@ -3,21 +3,22 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 
 import { Menu, Segment } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 const featureLinksRenderer = isLoggedIn => (
     isLoggedIn ? <React.Fragment>
         <Menu.Item name='Convert'
             onClick={() => console.log('Convert')}></Menu.Item>
-        <Menu.Item name='Images'
+        <Menu.Item name='Images' as={Link} to="/"
             onClick={() => console.log('Images')}></Menu.Item>
     </React.Fragment> : null
 );
 
-const authLinksRenderer = (isLoggedIn, loginFn) => (
+const authLinksRenderer = (isLoggedIn) => (
     !isLoggedIn ? <React.Fragment>
-        <Menu.Item name='Login'
+        <Menu.Item name='Login' as={Link} to='/login'
             onClick={() => console.log('Login')}></Menu.Item>
-        <Menu.Item name='Register'
+        <Menu.Item name='Register' as={Link} to="/register"
             onClick={() => console.log('Register')}></Menu.Item>
     </React.Fragment> : null
 )
