@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Grid } from 'semantic-ui-react'
 
-import LoginFormComponent from '../../../components/LoginForm/LoginFormComponent';
+import { LoginFormComponent } from '../../../components/LoginForm/LoginFormComponent';
 
 export class LoginComponent extends React.Component {
 
