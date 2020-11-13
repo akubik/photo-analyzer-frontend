@@ -4,7 +4,7 @@ import { PropTypes } from 'prop-types';
 
 import { Menu, Segment } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-import * as actionTypes from '../../store/actions';
+import { logout } from '../../store/actions/actions';
 
 const featureLinksRenderer = isLoggedIn => (
     isLoggedIn ? <React.Fragment>
@@ -53,7 +53,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onLogout: () => dispatch({type: actionTypes.LOGOUT})
+        onLogout: () => dispatch(logout())
     }
 }
 
