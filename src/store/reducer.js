@@ -1,15 +1,17 @@
+import * as actionTypes from './actions';
+
 const initialState = {
     isLoggedIn: false
 }
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'LOGIN':
+        case actionTypes.LOGIN:
             return {
                 ...state,
                 isLoggedIn: true
             }
-        case 'LOGOUT': 
+        case actionTypes.LOGOUT: 
             return {
                 ...state,
                 isLoggedIn: false

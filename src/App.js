@@ -1,6 +1,6 @@
 import './App.css';
 import { Container } from 'semantic-ui-react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Redirect } from 'react-router-dom';
 
 import LoginComponent from './containers/Auth/Login/Login';
 import RegisterComponent from './containers/Auth/Register/Register';
@@ -13,9 +13,16 @@ function App() {
       <BrowserRouter>
         <MenuComponent />
         <Container>
-          <Route path="/login" exact component={LoginComponent} />
-          <Route path="/register" exact component={RegisterComponent} />
-          <Route path="/" exact component={ImageList} />
+          <Route path="/login" exact>
+            <LoginComponent />
+          </Route>
+          <Route path="/register" exact>
+            <RegisterComponent />
+          </Route>
+          <Route path="/" exact>
+            <ImageList />
+          </Route>
+          <Redirect to="/" />
         </Container>
       </BrowserRouter>
     </>

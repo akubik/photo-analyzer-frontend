@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { Grid } from 'semantic-ui-react'
 
 import { LoginFormComponent } from '../../../components/LoginForm/LoginFormComponent';
+import * as actionTypes from '../../../store/actions';
+
 
 class LoginComponent extends React.Component {
 
@@ -31,7 +33,7 @@ class LoginComponent extends React.Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onLogin: () => dispatch({ type: 'LOGIN' })
+        onLogin: () => dispatch({ type: actionTypes.LOGIN })
     }
 }
 
