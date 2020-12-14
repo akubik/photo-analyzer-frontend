@@ -12,8 +12,8 @@ class RegisterComponent extends React.Component {
     }
 
     onSubmit(event) {
-        event.preventDefault();
-        console.log("Registered")
+        // event.preventDefault();
+        console.log(event)
     }
 
     render() {
